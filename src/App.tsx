@@ -1,25 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { FC } from 'react';
+import { Helmet } from 'react-helmet';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
+import FormulaReader from './Formula-Reader';
 
-function App() {
+import Home from './Home';
+import NotFound from './NotFound';
+import RandomNotes from './Random-Notes';
+import './styles/global.scss';
+
+const App: FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+        <Routes>
+          <Route path="/formula-reader" element={<FormulaReader/>}/>
+          <Route path="/random-notes" element={<RandomNotes/>}/>
+          <Route path="/" element={<Home />}/>
+          <Route path="*" element={<NotFound />}/>
+        </Routes>
+      </Router>
   );
 }
 
