@@ -41,7 +41,7 @@ const FormulaReader: FC = () => {
   )
 
   // display notes in staff
-  useEffect(drawStaffEffect(staffRef, notes, clef, rootNote), [notes])
+  useEffect(drawStaffEffect(staffRef, notes, clef, rootNote), [notes, clef])
 
   return (
     <Layout>
