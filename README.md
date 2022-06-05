@@ -1,6 +1,6 @@
 # Musical Tools for Everyone
 
-**Made for the sake of music and for the fun of programming :)** Used [`create-react-app`](https://create-react-app.dev/) with TypeScript for setup, and [Material Tailwind](https://www.material-tailwind.com/) for UI.
+**Made for the sake of music and for the fun of programming :)** Used [`create-react-app`](https://create-react-app.dev/) with TypeScript for setup, and [Mantine](https://www.mantine.dev/) for UI.
 
 Practice your instrument or learn more about music theory with these beautiful tools:
 
