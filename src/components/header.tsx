@@ -1,17 +1,22 @@
-import { FC } from "react"
+import { Anchor, Title } from "@mantine/core"
+import type { FC } from "react"
 import { Link } from "react-router-dom"
 
 const Header: FC = () => {
   return (
-      <header>
+    <header>
+      <div>
         <div>
-        <div><Link to="/">
-        Home
-        </Link></div>
-        <div>Music2</div>
+          <Anchor component={Link} to="/">
+            <Title>Musical Tools</Title>
+          </Anchor>
         </div>
-        
-      </header>
+
+        <Anchor href="https://github.com/erhant/musical-tools-for-everyone" target="_blank">
+          <Title>GitHub</Title>
+        </Anchor>
+      </div>
+    </header>
   )
 }
 export default Header

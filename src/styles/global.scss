@@ -5,9 +5,10 @@ $containerWidth: max(55%, 350px);
   flex-direction: column;
   min-height: 100vh;
   height: 100vh;
+  overflow-y: auto;
 
   header {
-    background-color: #202123;
+    background-color: lavender;
     color: white;
     padding: 10px 0 10px 0;
 
@@ -15,8 +16,6 @@ $containerWidth: max(55%, 350px);
       width: $containerWidth;
       margin: auto;
       display: flex;
-      align-items: center;
-      justify-content: center;
 
       div {
         &:first-of-type {
@@ -45,4 +44,9 @@ $containerWidth: max(55%, 350px);
       flex-grow: 1;
     }
   }
+}
+
+.staff {
+  width: min(90vw, 700px);
+  margin: auto;
 }

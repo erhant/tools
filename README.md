@@ -9,4 +9,4 @@ Practice your instrument or learn more about music theory with these beautiful t
 - **Circle of Fifths:** An interactive circle of fifths visualizer _todo_
 - **Fretboard:** An interactive fretboard visualizer _todo_
 
-Generated notes are written both in text, as well as on a clef of your choice! [Vexflow](https://www.vexflow.com/) is used for this.
+Generated notes are written both in text, as well as on a stave! [Vexflow](https://www.vexflow.com/) is used for this. See its [tutorial](https://github.com/0xfe/vexflow/wiki/Tutorial).

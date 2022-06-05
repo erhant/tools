@@ -1,8 +1,8 @@
-import { FC } from 'react';
-import Layout from './components/layout';
-import {Helmet} from "react-helmet";
-import { Link } from 'react-router-dom';
-import { List, ListItem } from '@mantine/core';
+import { FC } from "react"
+import Layout from "./components/layout"
+import { Helmet } from "react-helmet"
+import { Link } from "react-router-dom"
+import { Anchor, Title } from "@mantine/core"
 
 const Home: FC = () => {
   return (
@@ -12,17 +12,15 @@ const Home: FC = () => {
         <meta name="description" content="Use these tools to practice your instrument!" />
       </Helmet>
 
-      <List>
-        <ListItem><Link to="/random-notes">
-        Random Notes
-      </Link></ListItem>
-      <ListItem><Link to="/formula-reader">
-        Formula Reader
-      </Link></ListItem>
-      </List>
-      
+      <Anchor component={Link} to="/random-notes">
+        <Title>Random Notes</Title>
+      </Anchor>
+
+      <Anchor component={Link} to="/formula-reader">
+        <Title>Formula Reader</Title>
+      </Anchor>
     </Layout>
-  );
+  )
 }
 
-export default Home;
+export default Home

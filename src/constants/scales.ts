@@ -1,0 +1,53 @@
+const scales = {
+  Chromatic: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+  Wholetone: [0, 2, 2, 2, 2, 2],
+
+  Major: "1-2-3-4-5-6-7-8",
+  Minor: [0, 2, 1, 2, 2, 1, 2],
+  Augmented: [0, 3, 1, 3, 1, 3, 1],
+  Diminished: [0, 2, 1, 2, 1, 2, 1, 2, 1],
+
+  HarmonicMinor: [0, 2, 1, 2, 2, 1, 3, 1],
+  HarmonicMinorDom7: [0, 3, 4, 4, 1],
+  MelodicMinor: [0, 2, 1, 2, 2, 2, 2, 1],
+  MelodicMinorDom7: [0, 3, 2, 4, 3],
+
+  MinorPentatonic: [0, 3, 2, 2, 3],
+  MajorPentatonic: [0, 2, 2, 3, 2],
+  NewPentatonic: [0, 2, 2, 2, 3],
+  PentatonicJapanese: [0, 1, 4, 2, 1],
+  PentatonicBalinese: [0, 1, 4, 1, 2],
+  PentatonicPelog: [0, 1, 2, 4, 3],
+  HemitonicPentatonic3: [0, 2, 1, 4, 4],
+  PentatonicVariation: [0, 4, 3, 2, 1],
+
+  Blues: [0, 3, 2, 1, 1, 3],
+  Esoteric6: [0, 3, 4, 2, 3],
+  Enigmatic: [0, 1, 3, 2, 2, 2, 1, 1],
+  Byzantine: [0, 1, 3, 1, 2, 1, 3, 1],
+  Arabian: [0, 2, 2, 1, 1, 2, 2, 2],
+  Arabic: [0, 1, 3, 1, 2, 1, 3, 1],
+  Persian: [0, 1, 3, 1, 2, 3, 1, 1],
+  Spanish: [0, 1, 2, 1, 1, 1, 2, 2, 2],
+  HungarianGypsy: [0, 2, 1, 3, 1, 1, 2, 2],
+  HungarianMinor: [0, 2, 1, 3, 1, 1, 3, 1],
+  NativeAmerican: [0, 2, 2, 2, 3, 2, 1],
+  MajorBebop: [0, 2, 2, 1, 2, 1, 1, 2, 1],
+  Hirajoshi: [0, 2, 1, 4, 1, 4],
+  Insen: [0, 1, 4, 2, 3, 2],
+  Yo: [0, 2, 3, 2, 2, 3],
+  Acoustic: [0, 2, 2, 2, 1, 2, 1, 2],
+  Jenkees: [0, 2, 1, 2, 2, 3, 2],
+  NeapolitanMinor: [0, 1, 2, 2, 2, 1, 3, 1],
+  Prometheus: [0, 2, 2, 2, 3, 1, 2],
+
+  MajorIonian: [0, 2, 2, 1, 2, 2, 2, 1],
+  MajorDorian: [0, 2, 1, 2, 2, 2, 1, 2],
+  MajorPhrygian: [0, 1, 2, 2, 2, 1, 2, 2],
+  MajorLydian: [0, 2, 2, 2, 1, 2, 2, 1],
+  MajorMixolydian: [0, 2, 2, 1, 2, 2, 1, 2],
+  MajorAeolian: [0, 2, 1, 2, 2, 1, 2, 2],
+  MajorLocrian: [0, 1, 2, 2, 1, 2, 2, 2],
+}
+
+export default scales
