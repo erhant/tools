@@ -1,4 +1,4 @@
-import { MusicNote, MusicPosition } from "../types/music"
+import { MusicNote, MusicPosition, MusicPreparedNote, MusicClef, MusicAccidental } from "../types/music"
 
 export const MusicNoteToMusicPosition: { [key in MusicNote]: MusicPosition } = {
   C: 0,
@@ -43,4 +43,28 @@ export function getRandomNotes(count: number): MusicNote[] {
     ans.push(MusicPositionToMusicNote[Math.floor(Math.random() * 12) as MusicPosition][Math.random() < 0.5 ? 0 : 1])
   }
   return ans
+}
+
+/**
+ * Given an array of notes, prepare by assigning octaves w.r.t clef.
+ * @param notes
+ * @param clef
+ */
+export function prepareNotes(notes: MusicNote[], clef: MusicClef): MusicPreparedNote[] {
+  return notes.map((n: MusicNote) => {
+    // octave changes w.r.t clef; treble gets 4 or 5, bass gets 2 or 3
+
+    let octave = clef == "treble" ? 4 : 2
+    if (Math.random() < 0.5) octave++
+
+    const prepN: MusicPreparedNote = {
+      note: n,
+      duration: "q",
+      octave,
+    }
+    // accidentals are assured to be at [1] due to MusicNote type
+    if (n.length > 1) prepN.accidental = n[1] as MusicAccidental
+
+    return prepN
+  })
 }

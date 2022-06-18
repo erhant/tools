@@ -3,8 +3,9 @@ import Layout from "./components/layout"
 import { Helmet } from "react-helmet"
 import { Title, Grid, TextInput, NativeSelect, Box, Text } from "@mantine/core"
 import { formulaToIntervals, isValidFormula } from "./lib/formula"
-import { MusicAccidental, MusicClef, MusicNote } from "./types/music"
-import { drawStaffEffect } from "./lib/vexflow"
+import { MusicAccidental, MusicClef, MusicNote, MusicPreparedNote } from "./types/music"
+import { drawStaff } from "./lib/vexflow"
+import { prepareNotes } from "./lib/base"
 import { intervalsToNotes } from "./lib/interval"
 import presetChords from "./constants/chords"
 import presetIntervals from "./constants/intervals"
@@ -12,17 +13,21 @@ import presetIntervals from "./constants/intervals"
 const STAFF_ELEM_ID = "formula-reader-staff"
 const chordMapKeys = Object.keys(presetChords)
 const intervalMapKeys = Object.keys(presetIntervals)
+const DEFAULT_CLEF: MusicClef = "bass"
+const DEFAULT_FORMULA = "1-3-5"
+const DEFAULT_NOTES: MusicNote[] = ["C", "E", "G"]
 
 const FormulaReader: FC = () => {
   const staffRef = useRef<HTMLDivElement>(null)
-  const [formula, setFormula] = useState("1-3-5")
-  const [formulaInput, setFormulaInput] = useState("1-3-5")
+  const [formula, setFormula] = useState(DEFAULT_FORMULA)
+  const [formulaInput, setFormulaInput] = useState(DEFAULT_FORMULA)
   const [formulaIsValid, setFormulaIsValid] = useState(true)
   const [accidental, setAccidental] = useState<MusicAccidental>("#")
-  const [clef, setClef] = useState<MusicClef>("bass")
+  const [clef, setClef] = useState<MusicClef>(DEFAULT_CLEF)
+  const [preparedNotes, setPreparedNotes] = useState<MusicPreparedNote[]>(prepareNotes(DEFAULT_NOTES, DEFAULT_CLEF))
   const [chordPreset, setChordPreset] = useState<string>(chordMapKeys[0])
   const [intervalPreset, setIntervalPreset] = useState<string>(intervalMapKeys[0])
-  const [rootNote, setRootNote] = useState<MusicNote>("C")
+  const [rootNote, setRootNote] = useState<MusicNote>(DEFAULT_NOTES[0])
   const intervals: number[] = useMemo(() => formulaToIntervals(formula), [formula])
   const intervalsDisplay: string = useMemo(
     () =>
@@ -41,7 +46,17 @@ const FormulaReader: FC = () => {
   )
 
   // display notes in staff
-  useEffect(drawStaffEffect(staffRef, notes, clef, rootNote), [notes, clef])
+  useEffect(() => {
+    const ctx = drawStaff(staffRef, preparedNotes, clef, rootNote)
+
+    return () => {
+      if (ctx) ctx.restore()
+    }
+  }, [preparedNotes])
+
+  useEffect(() => {
+    setPreparedNotes(prepareNotes(notes, clef))
+  }, [notes, clef])
 
   return (
     <Layout>

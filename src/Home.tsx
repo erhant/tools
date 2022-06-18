@@ -19,6 +19,14 @@ const Home: FC = () => {
       <Anchor component={Link} to="/formula-reader">
         <Title>Formula Reader</Title>
       </Anchor>
+
+      <Anchor component={Link} to="/metronome">
+        <Title>Metronome</Title>
+      </Anchor>
+
+      <Anchor component={Link} to="/key-signatures">
+        <Title>Key Signatures</Title>
+      </Anchor>
     </Layout>
   )
 }
