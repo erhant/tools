@@ -1,8 +1,8 @@
 import { FC } from "react"
-import Layout from "./components/layout"
 import { Helmet } from "react-helmet"
-import { Link } from "react-router-dom"
-import { Anchor, Title } from "@mantine/core"
+import Layout from "./components/layout"
+import { tools } from "./constants/tools"
+import Tool from "./components/tool"
 
 const Home: FC = () => {
   return (
@@ -11,22 +11,9 @@ const Home: FC = () => {
         <head>Music Tools for Everyone</head>
         <meta name="description" content="Use these tools to practice your instrument!" />
       </Helmet>
-
-      <Anchor component={Link} to="/random-notes">
-        <Title>Random Notes</Title>
-      </Anchor>
-
-      <Anchor component={Link} to="/formula-reader">
-        <Title>Formula Reader</Title>
-      </Anchor>
-
-      <Anchor component={Link} to="/metronome">
-        <Title>Metronome</Title>
-      </Anchor>
-
-      <Anchor component={Link} to="/key-signatures">
-        <Title>Key Signatures</Title>
-      </Anchor>
+      {tools.map((tool) => (
+        <Tool key={tool.path} tool={tool} />
+      ))}
     </Layout>
   )
 }

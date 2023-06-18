@@ -1,4 +1,4 @@
-import { MusicNote, MusicPosition, MusicPreparedNote, MusicClef, MusicAccidental } from "../types/music"
+import type { MusicNote, MusicPosition, MusicPreparedNote, MusicClef, MusicAccidental } from "../../types/music"
 
 export const MusicNoteToMusicPosition: { [key in MusicNote]: MusicPosition } = {
   C: 0,

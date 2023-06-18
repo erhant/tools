@@ -1,49 +1,16 @@
 $containerWidth: max(55%, 350px);
 
+// ThemeIcon icons respect this
+svg * {
+  stroke-width: 1.6px;
+}
+
 .layout {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   height: 100vh;
   overflow-y: auto;
-
-  header {
-    background-color: lavender;
-    color: white;
-    padding: 10px 0 10px 0;
-
-    div {
-      width: $containerWidth;
-      margin: auto;
-      display: flex;
-
-      div {
-        &:first-of-type {
-          flex-grow: 1;
-        }
-      }
-
-      a {
-        margin: 0 5px 0 5px;
-      }
-    }
-  }
-
-  footer {
-    text-align: center;
-    padding: 15px 0 15px 0;
-  }
-
-  main {
-    margin: auto;
-    width: $containerWidth;
-  }
-
-  div {
-    &:first-of-type {
-      flex-grow: 1;
-    }
-  }
 }
 
 .staff {

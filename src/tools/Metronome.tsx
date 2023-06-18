@@ -1,5 +1,5 @@
 import { FC, useEffect, useRef, useState } from "react"
-import Layout from "./components/layout"
+import Layout from "../components/layout"
 import { Helmet } from "react-helmet"
 import { Button, Group, NumberInput, Title } from "@mantine/core"
 import * as Tone from "tone"

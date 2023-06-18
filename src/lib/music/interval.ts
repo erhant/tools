@@ -1,4 +1,4 @@
-import { MusicAccidental, MusicNote, MusicPosition } from "../types/music"
+import type { MusicAccidental, MusicNote, MusicPosition } from "../../types/music"
 import { MusicNoteToMusicPosition, MusicPositionToMusicNote } from "./base"
 
 // Interval Matrix of the Major Scale

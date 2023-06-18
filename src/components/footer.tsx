@@ -1,20 +1,12 @@
-import { FC } from "react"
+import { Box, Text } from "@mantine/core"
+import type { FC } from "react"
 
 const Footer: FC = () => {
   return (
-    <footer>
-      <h4>
-        Made with &hearts; by{" "}
-        <a
-          href="https://github.com/erhant"
-          target="_blank"
-          rel="noreferrer"
-          style={{ textDecoration: "none", color: "inherit" }}
-        >
-          erhant
-        </a>
-      </h4>
-    </footer>
+    <Box component="footer" py="md" sx={{ textAlign: "center" }}>
+      <Text>&copy; Erhan Tezcan {new Date().getFullYear()} &nbsp; </Text>
+    </Box>
   )
 }
+
 export default Footer

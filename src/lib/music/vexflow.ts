@@ -1,4 +1,4 @@
-import { MusicClef, MusicNote, MusicPreparedNote } from "../types/music"
+import type { MusicClef, MusicNote, MusicPreparedNote } from "../../types/music"
 import { Renderer, Stave, StaveNote, Formatter, Accidental, RendererBackends, RenderContext } from "vexflow"
 
 export function drawStaff(

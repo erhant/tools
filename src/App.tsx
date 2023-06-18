@@ -1,26 +1,21 @@
-import { FC } from "react"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import FormulaReader from "./Formula-Reader"
-
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import NotFound from "./404"
+import type { FC } from "react"
+import { tools } from "./constants/tools"
 import Home from "./Home"
-import KeySignatures from "./Key-Signatures"
-import NotFound from "./NotFound"
-import Metronome from "./Metronome"
-import RandomNotes from "./Random-Notes"
 import "./styles/global.scss"
 
 const App: FC = () => {
   return (
-    <Router>
+    <BrowserRouter>
       <Routes>
-        <Route path="/formula-reader" element={<FormulaReader />} />
-        <Route path="/random-notes" element={<RandomNotes />} />
-        <Route path="/metronome" element={<Metronome />} />
-        <Route path="/key-signatures" element={<KeySignatures />} />
         <Route path="/" element={<Home />} />
+        {tools.map(({ path, element }) => (
+          <Route path={path} element={element} key={path} />
+        ))}
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   )
 }
 
